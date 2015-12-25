@@ -1,0 +1,283 @@
+html,head,body { padding:0; margin:0; }
+body { font-family: calibri, helvetica, arial, sans-serif; }
+
+.home-screen {
+	height: 100%;
+}
+
+.tiles-container {
+	flex-flow: row wrap;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.tile {
+	width: 200px;
+    height: 200px;
+    border: 1px solid whitesmoke;
+    margin: 10px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    /* align-content: center; */
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.5s color 0.5s;
+    -webkit-transition: background-color 0.5s, color 0.5s;
+}
+
+.tile:hover {
+	background-color: green;
+	color: white;
+}
+
+
+/* Speed Match */
+
+.clock {
+	margin: 20px;
+	font-size: 30px;
+}
+
+@keyframes card-fadein {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+.arrows-container {
+	margin: 25px;
+	color: white;
+	font-weight: bold;
+}
+
+.left-arrow, .right-arrow {
+	width: 200px;
+	display: inline-block;
+	border-radius: 5px;
+}
+
+.left-arrow {
+	background-color: red;
+	margin-right: 5px;
+}
+
+.right-arrow {
+	background-color: green;
+}
+
+.card {
+	visibility: visible;
+	animation-name: card-fadein;
+	animation-fill-mode: forwards;
+	animation-duration: 0.1s;
+	background-color: white;
+	border-radius: 5px;
+	box-shadow: 0px 0px 5px 0px #8C8C8C;
+	display: inline-block;
+}
+
+.welcome {
+	margin: 20px;
+	font-size: 15px;
+	width: 80%;
+}
+
+.game {
+	display: inline-block;
+	background-color: white;
+	vertical-align: top;
+	border-radius: 5px;
+	box-shadow: 0px 0px 5px 0px #8C8C8C;
+}
+
+.game-container {
+	text-align: center;
+}
+
+.container {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	background-color: whitesmoke;
+}
+
+.summary-container {
+	text-align: center;
+}
+
+.summary {
+	border-radius: 5px;
+	box-shadow: 0px 0px 5px 0px #8C8C8C;
+	background-color: white;
+	margin: 20px;
+	display: inline-block;
+    padding: 30px;
+    text-align: initial;
+}
+
+@keyframes fadein {
+	0% {
+		opacity: 0;
+		transform: translate(50px, 0);
+	}
+	100% {
+		opacity: 1;
+		transform: translate(0, 0);
+	}
+}
+
+@keyframes fadeout {
+	0% {
+		opacity: 1;
+		transform: translate(0, 0);
+	}
+	100% {
+		opacity: 0;
+		transform: translate(-50px, 0);	
+	}
+}
+
+@keyframes fadeinout1 {
+	0% {
+		opacity: 1;
+		transform: translate(0, 0);
+	}
+	50% {
+		opacity: 0.8;
+	}
+	100% {
+		opacity: 0;
+		transform: translate(0, 0);
+	}
+}
+
+@keyframes fadeinout2 {
+	0% {
+		opacity: 1;
+		transform: translate(0, 0);
+	}
+	50% {
+		opacity: 0.8;
+	}
+	100% {
+		opacity: 0;
+		transform: translate(0, 0);
+	}
+}
+
+.shape {
+	transition: all 0.10s ease-in;
+	opacity: 0;
+	visibility: hidden;
+	transform: translate(100px, 0);
+}
+
+.fadeinout1 {
+	visibility: visible;
+	animation-name: fadeinout1;
+	animation-fill-mode: forwards;
+	animation-duration: 0.2s;
+}
+
+.fadeinout2 {
+	visibility: visible;
+	animation-name: fadeinout2;
+	animation-fill-mode: forwards;
+	animation-duration: 0.2s;
+}
+
+.fadeout {
+	visibility: visible;
+	animation-name: fadeout;
+	animation-fill-mode: forwards;
+	animation-duration: 0.15s;
+}
+
+.fadein {
+	visibility: visible;
+	animation-name: fadein;
+	animation-fill-mode: forwards;
+	animation-duration: 0.15s;
+}
+
+.hide {
+	visibility: hidden;
+}
+
+/* Memory Matrix */
+
+.clicked {
+  animation-name: stylie-keyframes;
+  animation-duration: 200ms;
+  animation-delay: 0ms;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-out;
+  /*animation-iteration-count: infinite;*/
+  transform-origin: 50% 50%;
+}
+@keyframes stylie-keyframes {
+  0% {transform: rotateX(0deg) rotateY(90deg) rotateZ(0deg);}
+  100% {transform: rotateX(0deg) rotateY(180deg) rotateZ(0deg);}
+}
+
+.container * {
+  box-sizing: border-box;
+}
+
+.container {
+  position: absolute;
+  /* margin: 0 auto; */
+  width: 100%;
+  height: 100%;
+}
+
+.sub-container {
+  position: absolute;
+  background-color: transparent;
+  border: 1px solid #DADADA;
+  top: 50%;
+  /* box-shadow: 0px 0px 4px black; */
+  margin: 0 auto;
+  padding: 0px;
+  /* border-radius: 5px; */
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.table {
+  /*box-shadow: 0px 0px 1px gray;*/
+  margin: -1px;
+  display: table;
+  border-collapse: collapse;
+}
+
+.row {
+  display: table-row;
+}
+
+.cell {
+  border: 1px solid transparent;
+  display: table-cell;
+}
+
+.reset .square {
+  animation-name: stylie-keyframes2;
+  animation-duration: 200ms;
+  animation-delay: 0ms;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-out;
+  /*animation-iteration-count: infinite;*/
+  transform-origin: 50% 50%;
+}
+@keyframes stylie-keyframes2 {
+  0% {transform: rotateX(0deg) rotateY(90deg) rotateZ(0deg);}
+  100% {transform: rotateX(0deg) rotateY(180deg) rotateZ(0deg);}
+}

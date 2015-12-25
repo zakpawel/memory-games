@@ -1,0 +1,29 @@
+<html>
+
+  <head>
+    <title>Speed Match</title>
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="elm.js"></script>
+  </head>
+
+  <body>
+    <!-- <h1>Stamper</h1> -->
+    <div id="holder"></div>
+  </body>
+
+  <script type="text/javascript">
+    var holderDiv = document.getElementById('holder');
+    var app = Elm.embed(Elm.Main, holderDiv, { hash: window.location.hash });
+
+    function sendHash() {
+      app.ports.hash.send(window.location.hash);
+    }
+
+    window.onhashchange = function(e) {
+      sendHash();
+    }
+
+    sendHash();
+  </script>
+
+</html>
