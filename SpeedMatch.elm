@@ -207,14 +207,14 @@ checkGuessCorrection arrow model =
     case model.prevShape of
         Nothing -> True
         Just prevShape ->
-        let shapeEquals = model.shape == prevShape
-        in 
-            if arrow == Left && not shapeEquals then
-                True
-            else if arrow == Right && shapeEquals then
-                True
-            else
-                False
+            let shapeEquals = model.shape == prevShape
+            in 
+                if arrow == Left && not shapeEquals then
+                    True
+                else if arrow == Right && shapeEquals then
+                    True
+                else
+                    False
 
 adjustPointsAward : Bool -> Model -> Model
 adjustPointsAward guessCorrect model =
